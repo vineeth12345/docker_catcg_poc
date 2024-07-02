@@ -20,6 +20,8 @@ jobs:
     - name: Log in to Amazon ECR
       id: ecr-login
       uses: aws-actions/amazon-ecr-login@v1
+      with:
+        region: us-east-1
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
