@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Downgrade to a version compatible with .NET 6.0 -->
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
+    <!-- Use a version compatible with .NET 6.0 -->
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 

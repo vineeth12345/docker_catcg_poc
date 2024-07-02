@@ -34,7 +34,7 @@ jobs:
         context: .
         push: true
         tags: 790862075478.dkr.ecr.us-east-1.amazonaws.com/image-caching.net:latest
-        cache-from: type=registry,ref=790862075478.dkr.ecr.us-east-1.amazonaws.com/image-caching.net:cache
+        #cache-from: type=registry,ref=790862075478.dkr.ecr.us-east-1.amazonaws.com/image-caching.net:cache
         cache-to: type=registry,ref=790862075478.dkr.ecr.us-east-1.amazonaws.com/image-caching.net:cache,mode=max
         build-args: |
           BUILDKIT_INLINE_CACHE=1
