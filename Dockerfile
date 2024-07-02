@@ -1,23 +1,22 @@
-# Use the official .NET SDK image for build stage
+# Stage 1: Build
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-
-# Set the working directory
 WORKDIR /src
 
-# Copy the .csproj file and restore the dependencies
-COPY *.csproj ./
-RUN dotnet restore
+# Copy the .csproj file and restore dependencies
+COPY ["SimpleApi/SimpleApi.csproj", "SimpleApi/"]
+RUN dotnet restore "SimpleApi/SimpleApi.csproj"
 
-# Copy the rest of the application code
-COPY . ./
-RUN dotnet publish -c Release -o /app
+# Copy the remaining files and build the application
+COPY . .
+WORKDIR "/src/SimpleApi"
+RUN dotnet build -c Release -o /app/build
 
-# Use the official .NET runtime image for runtime stage
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+# Stage 2: Publish
+FROM build AS publish
+RUN dotnet publish -c Release -o /app/publish
 
+# Stage 3: Final
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS final
 WORKDIR /app
-COPY --from=build /app .
-
-# Set the entry point for the application
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "SimpleApi.dll"]
-
