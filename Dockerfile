@@ -2,6 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
 COPY ["SimpleApi/SimpleApi.csproj", "SimpleApi/"]
+RUN dotnet remove SimpleApi/SimpleApi.csproj package Microsoft.AspNetCore.OpenApi
 RUN dotnet add SimpleApi/SimpleApi.csproj package Microsoft.AspNetCore.OpenApi --version 7.6.3
 RUN dotnet restore "SimpleApi/SimpleApi.csproj"
 
