@@ -1,14 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework> <!-- Update to .NET 8.0 -->
+    <TargetFramework>net6.0</TargetFramework> <!-- Update to .NET 6.0 -->
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Update to a version compatible with .NET 8.0 -->
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.6.3" /> <!-- Use a version compatible with .NET 6.0 -->
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
