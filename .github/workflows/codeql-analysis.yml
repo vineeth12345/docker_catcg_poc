@@ -12,7 +12,7 @@ permissions:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-latest #[self-hosted, code-scanning]
+    runs-on: [self-hosted, code-scanning]
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
