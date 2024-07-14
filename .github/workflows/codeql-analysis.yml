@@ -13,10 +13,6 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest #[self-hosted, code-scanning]
-    #strategy:
-      #fail-fast: false
-      #matrix:
-        #language: ['csharp', 'c-cpp', 'javascript-typescript']
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -24,7 +20,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: javascript-typescript
-    #- name: Autobuild
-      #uses: github/codeql-action/autobuild@v3
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v3
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
