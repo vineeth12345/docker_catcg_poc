@@ -1,4 +1,5 @@
 name: "CodeQL"
+name: "CodeQL"
 on:
   push:
     branches: [ main ]
@@ -19,9 +20,8 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: java
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v3
-      with:
-        buildModeOption: false
+    - name: Build
+      run: |
+        ./gradlew build
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
