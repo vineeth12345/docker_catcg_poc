@@ -102,7 +102,7 @@ def lambda_handler(event, context):
             workflow_job_name = workflow_job['name']
             workflow_job_status = workflow_job['status']
             
-            if "Analyze" in workflow_job_name and workflow_job_status == "queued":
+            if "deploy" in workflow_job_name and workflow_job_status == "queued":
                 print("CodeQL job found and status is queued")
                 job = "CodeQL"
                 
