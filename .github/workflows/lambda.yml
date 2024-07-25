@@ -20,7 +20,7 @@ jobs:
 
     - name: Package Lambda function
       run: |
-        zip -r function.zip app.py
+        zip -r function.zip lambda_function
 
     - name: Update Lambda function
       run: |

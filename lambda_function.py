@@ -1,6 +1,6 @@
 # lambda-code
 
-#deploying using AWS CLI..
+#deploying using AWS CLI. added
 
 '''
 #workinf code for COdeQL
