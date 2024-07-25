@@ -20,7 +20,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt-get install -y zip unzip #this command will be changed based on the docker image used 
+        apt-get install -y zip unzip #this command will be changed based on the docker image used 
 
     - name: Package Lambda function
       run: |
