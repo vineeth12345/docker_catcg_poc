@@ -24,4 +24,4 @@ jobs:
 
     - name: Update Lambda function
       run: |
-        aws lambda update-function-code --function-name code-scanning --zip-file fileb://function.zip
+        aws lambda update-function-code --function-name github-ephemeral --zip-file fileb://function.zip
