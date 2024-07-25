@@ -17,11 +17,7 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
-
-    - name: Install dependencies
-      run: |
-        apt-get install -y zip unzip #this command will be changed based on the docker image used 
-
+        
     - name: Package Lambda function
       run: |
         zip -r function.zip app.py
