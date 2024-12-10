@@ -30,12 +30,22 @@ jobs:
     steps:
       - name: "Checkout repository"
         uses: actions/checkout@v4
+
+        # Fetch configuration file from repository Y
+      - name: Fetch configuration file from repository Y
+        uses: actions/checkout@v3
+        with:
+          repository: vineeth12345/workflows
+          ref: main
+          path: config-repo
+          token: ${{ secrets.DEPENDENCY }}
+
       - name: "Dependency Review"
         uses: actions/dependency-review-action@v4
         # Commonly enabled options, see https://github.com/actions/dependency-review-action#configuration-options for all available options.
         with:
-          config-file: "github/vineeth12345/workflows/.github/dependency-review-config.yml@main"
-          external-repo-token: "${{ secrets.DEPENDENCY }}"
+          config-file: "config-repo/.github/dependency-review-config.yml"
+        #   external-repo-token: "${{ secrets.DEPENDENCY }}"
         # fail-on-severity: high
         #   deny-licenses: GPL-1.0-or-later, LGPL-2.0-or-later
         #   retry-on-snapshot-warnings: true
