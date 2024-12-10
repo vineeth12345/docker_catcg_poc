@@ -35,7 +35,7 @@ jobs:
         # Commonly enabled options, see https://github.com/actions/dependency-review-action#configuration-options for all available options.
         with:
           config-file: "https://github.com/vineeth12345/workflows/blob/main/.github/dependency-review-config.yml@main"
-        #   external-repo-token: ${{ secrets.GITHUB_TOKEN }}
+          external-repo-token: "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"
         # fail-on-severity: high
         #   deny-licenses: GPL-1.0-or-later, LGPL-2.0-or-later
         #   retry-on-snapshot-warnings: true
