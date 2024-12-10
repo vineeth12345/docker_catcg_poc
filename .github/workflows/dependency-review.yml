@@ -33,7 +33,7 @@ jobs:
 
         # Fetch configuration file from repository Y
       - name: Fetch configuration file from repository Y
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: vineeth12345/workflows
           ref: main
