@@ -45,6 +45,8 @@ jobs:
         # Commonly enabled options, see https://github.com/actions/dependency-review-action#configuration-options for all available options.
         with:
           config-file: "config-repo/.github/dependency-review-config.yml"
+          base-ref: main # Replace with the target branch
+          head-ref: ${{ github.ref_name }} # Current branch being checked
         #   external-repo-token: "${{ secrets.DEPENDENCY }}"
         # fail-on-severity: high
         #   deny-licenses: GPL-1.0-or-later, LGPL-2.0-or-later
