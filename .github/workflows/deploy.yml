@@ -1,0 +1,27 @@
+name: SearchDL Deploy Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-searchdl-deploy]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display inputs
+        run: |
+          echo "Branch Name: ${{ github.event.client_payload.branch_name }}"
+          echo "Environment Name: ${{ github.event.client_payload.environment_name }}"
+          echo "Operation: ${{ github.event.client_payload.operation }}"
+          echo "Environment Type: ${{ github.event.client_payload.environment_type }}"
+          echo "Instance Name: ${{ github.event.client_payload.instance_name }}"
+
+      - name: Checkout the specified branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.client_payload.branch_name }}
+
+      - name: Deploy Job
+        run: |
+          echo "Deploying ${{ github.event.client_payload.operation }} to ${{ github.event.client_payload.environment_name }}"
+          echo "Running on branch: ${{ github.event.client_payload.branch_name }}"
