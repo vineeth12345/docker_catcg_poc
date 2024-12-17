@@ -15,6 +15,7 @@ jobs:
           echo "Operation: ${{ github.event.client_payload.operation }}"
           echo "Environment Type: ${{ github.event.client_payload.environment_type }}"
           echo "Instance Name: ${{ github.event.client_payload.instance_name }}"
+          echo "workflow Name ${{ github.event.client_payload.workflow_file }}"
 
       - name: Checkout the specified branch
         uses: actions/checkout@v4
