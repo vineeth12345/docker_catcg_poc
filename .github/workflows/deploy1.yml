@@ -16,22 +16,22 @@ on:
       #default: "Development-inttest01"
       environment-name:
         description: "The name of the environment to deploy"
-        required: true
+        required: false
         type: string
         default: "Development-inttest01"
       operation:
         description: "The operation to perform (e.g., deploy)"
-        required: true
+        required: false
         type: string
         default: "deploy"
       environment-type:
         description: "The type of environment (e.g., DEV, PROD)"
-        required: true
+        required: false
         type: string
         default: "DEV" #DEV
       instance-name:
         description: "Environment Name"
-        required: true
+        required: false
         type: string
         default: "inttest01"
 
