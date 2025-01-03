@@ -18,7 +18,7 @@ on:
         description: "The name of the environment to deploy"
         required: false
         type: string
-        default: "Development-inttest01"
+        default: "Development-inttest0111"
       operation:
         description: "The operation to perform (e.g., deploy)"
         required: false
